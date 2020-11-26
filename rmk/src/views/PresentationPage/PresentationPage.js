@@ -38,13 +38,13 @@ export default function PresentationPage() {
   return (
     <div>
       <Header
-        brand="Material Kit PRO React"
+        brand="Om Shehab For Design"
         links={<HeaderLinks dropdownHoverColor="info" />}
         fixed
         color="transparent"
         changeColorOnScroll={{
           height: 400,
-          color: "info"
+          color: "warning",
         }}
       />
       <Parallax
@@ -56,82 +56,77 @@ export default function PresentationPage() {
             <GridItem>
               <div className={classes.brand}>
                 <h1>
-                  Material Kit React
-                  <span className={classes.proBadge}>PRO</span>
+                  أم شهاب للمصنوعات اليدوية
+                  <span
+                    className={classes.proBadge}
+                    style={{ marginRight: "15px" }}
+                  >
+                    اليدويه
+                  </span>
                 </h1>
-                <h3 className={classes.title}>
-                  A Badass Material-UI Kit based on Material Design.
-                </h3>
+                <h3 className={classes.title}>توك - اطواق - بروشات</h3>
               </div>
             </GridItem>
           </GridContainer>
         </div>
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <SectionDescription />
+        {/* <SectionDescription />
         <SectionComponents />
         <SectionCards />
         <SectionContent />
         <SectionSections />
         <SectionExamples />
         <SectionFreeDemo />
-        <SectionOverview />
+        <SectionOverview /> */}
       </div>
       <SectionPricing />
       <Footer
-        theme="white"
+        theme="dark"
         content={
           <div>
-            <div className={classes.left}>
+            <div className={classes.rightFooter}>
               <a
                 href="https://www.creative-tim.com/product/material-kit-pro-react?ref=mkpr-presentation"
                 target="_blank"
                 className={classes.footerBrand}
               >
-                Material Kit PRO React
+                أم شهاب للمصنوعات اليدوية
               </a>
             </div>
             <div className={classes.pullCenter}>
               <List className={classes.list}>
                 <ListItem className={classes.inlineBlock}>
                   <a
-                    href="https://www.creative-tim.com/?ref=mkpr-presentation"
+                    href="https://www.ahm4d.com/"
                     target="_blank"
                     className={classes.block}
                   >
-                    Creative Tim
+                    أحمد دوت كوم
                   </a>
                 </ListItem>
                 <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/presentation?ref=mkpr-presentation"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    About us
+                  <a href="#" target="_blank" className={classes.block}>
+                    عنا
                   </a>
                 </ListItem>
                 <ListItem className={classes.inlineBlock}>
-                  <a href="//blog.creative-tim.com/" className={classes.block}>
-                    Blog
+                  <a href="#" className={classes.block}>
+                    بولج
                   </a>
                 </ListItem>
                 <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/license?ref=mkpr-presentation"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    Licenses
+                  <a href="#" target="_blank" className={classes.block}>
+                    الرخصه
                   </a>
                 </ListItem>
               </List>
             </div>
-            <div className={classes.rightLinks}>
+            <div className={classes.leftLinks}>
               <ul>
                 <li>
                   <Button
-                    href="https://twitter.com/CreativeTim?ref=creativetim"
+                    href="https://twitter.com/"
                     target="_blank"
                     color="twitter"
                     justIcon
@@ -142,18 +137,18 @@ export default function PresentationPage() {
                 </li>
                 <li>
                   <Button
-                    href="https://dribbble.com/creativetim?ref=creativetim"
+                    href="https://facebook.com/"
                     target="_blank"
-                    color="dribbble"
+                    color="facebook"
                     justIcon
                     simple
                   >
-                    <i className="fab fa-dribbble" />
+                    <i className="fab fa-facebook" />
                   </Button>
                 </li>
                 <li>
                   <Button
-                    href="https://instagram.com/CreativeTimOfficial?ref=creativetim"
+                    href="https://instagram.com/"
                     target="_blank"
                     color="instagram"
                     justIcon

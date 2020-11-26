@@ -30,12 +30,12 @@ export default function SectionPricing() {
               Ready to grab Material Kit PRO React?
             </h2>
             <Button
-              href="https://www.creative-tim.com/product/material-kit-pro-react?ref=mkpr-presentation"
+              href="https://www.ahm4d.com"
               color={"primary"}
               target="_blank"
               round
             >
-              <ShoppingCart className={classes.icons} /> buy now
+              <ShoppingCart className={classes.icons} /> اشترى الان
             </Button>{" "}
             <Button
               href="https://www.creative-tim.com/product/material-kit-react?ref=mkpr-presentation"

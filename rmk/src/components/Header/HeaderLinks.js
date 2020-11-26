@@ -37,10 +37,12 @@ import Layers from "@material-ui/icons/Layers";
 import ShoppingBasket from "@material-ui/icons/ShoppingBasket";
 import LineStyle from "@material-ui/icons/LineStyle";
 import Error from "@material-ui/icons/Error";
+import Favorite from "@material-ui/icons/Favorite";
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 import Button from "components/CustomButtons/Button.js";
+import Badge from "components/Badge/Badge.js";
 
 import styles from "assets/jss/material-kit-pro-react/components/headerLinksStyle.js";
 
@@ -74,7 +76,7 @@ export default function HeaderLinks(props) {
       currentTime = 0,
       increment = 20;
 
-    var animateScroll = function() {
+    var animateScroll = function () {
       currentTime += increment;
       var val = easeInOutQuad(currentTime, start, change, duration);
       element.scrollTop = val;
@@ -98,7 +100,7 @@ export default function HeaderLinks(props) {
           buttonText="Components"
           buttonProps={{
             className: classes.navLink,
-            color: "transparent"
+            color: "transparent",
           }}
           buttonIcon={Apps}
           dropdownList={[
@@ -116,10 +118,14 @@ export default function HeaderLinks(props) {
             >
               <Icon className={classes.dropdownIcons}>content_paste</Icon>
               Documentation
-            </a>
+            </a>,
           ]}
         />
       </ListItem>
+      <Badge>primary</Badge>
+      <Button color="primary" round>
+        <PersonAdd /> With Icon
+      </Button>
       <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
@@ -128,66 +134,66 @@ export default function HeaderLinks(props) {
           buttonText="Sections"
           buttonProps={{
             className: classes.navLink,
-            color: "transparent"
+            color: "transparent",
           }}
           buttonIcon={ViewDay}
           dropdownList={[
             <Link
               to="/sections#headers"
               className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "headers")}
+              onClick={(e) => smoothScroll(e, "headers")}
             >
               <Dns className={classes.dropdownIcons} /> Headers
             </Link>,
             <Link
               to="/sections#features"
               className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "features")}
+              onClick={(e) => smoothScroll(e, "features")}
             >
               <Build className={classes.dropdownIcons} /> Features
             </Link>,
             <Link
               to="/sections#blogs"
               className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "blogs")}
+              onClick={(e) => smoothScroll(e, "blogs")}
             >
               <ListIcon className={classes.dropdownIcons} /> Blogs
             </Link>,
             <Link
               to="/sections#teams"
               className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "teams")}
+              onClick={(e) => smoothScroll(e, "teams")}
             >
               <People className={classes.dropdownIcons} /> Teams
             </Link>,
             <Link
               to="/sections#projects"
               className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "projects")}
+              onClick={(e) => smoothScroll(e, "projects")}
             >
               <Assignment className={classes.dropdownIcons} /> Projects
             </Link>,
             <Link
               to="/sections#pricing"
               className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "pricing")}
+              onClick={(e) => smoothScroll(e, "pricing")}
             >
               <MonetizationOn className={classes.dropdownIcons} /> Pricing
             </Link>,
             <Link
               to="/sections#testimonials"
               className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "testimonials")}
+              onClick={(e) => smoothScroll(e, "testimonials")}
             >
               <Chat className={classes.dropdownIcons} /> Testimonials
             </Link>,
             <Link
               to="/sections#contacts"
               className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "contacts")}
+              onClick={(e) => smoothScroll(e, "contacts")}
             >
               <Call className={classes.dropdownIcons} /> Contacts
-            </Link>
+            </Link>,
           ]}
         />
       </ListItem>
@@ -199,7 +205,7 @@ export default function HeaderLinks(props) {
           buttonText="Examples"
           buttonProps={{
             className: classes.navLink,
-            color: "transparent"
+            color: "transparent",
           }}
           buttonIcon={ViewCarousel}
           dropdownList={[
@@ -241,19 +247,19 @@ export default function HeaderLinks(props) {
             </Link>,
             <Link to="/error-page" className={classes.dropdownLink}>
               <Error className={classes.dropdownIcons} /> Error Page
-            </Link>
+            </Link>,
           ]}
         />
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          href="https://www.creative-tim.com/product/material-kit-pro-react?ref=mkpr-navbar"
-          color={window.innerWidth < 960 ? "info" : "white"}
+          href="https://www.ahm4d.com/mozn/"
+          color={window.innerWidth < 960 ? "facebook" : "success"}
           target="_blank"
           className={classes.navButton}
           round
         >
-          <ShoppingCart className={classes.icons} /> buy now
+          <ShoppingCart className={classes.icons} /> اشترى الان
         </Button>
       </ListItem>
     </List>
@@ -261,7 +267,7 @@ export default function HeaderLinks(props) {
 }
 
 HeaderLinks.defaultProps = {
-  hoverColor: "primary"
+  hoverColor: "primary",
 };
 
 HeaderLinks.propTypes = {
@@ -272,6 +278,23 @@ HeaderLinks.propTypes = {
     "success",
     "warning",
     "danger",
-    "rose"
-  ])
+    "rose",
+  ]),
+};
+
+Badge.defaultProps = {
+  color: "danger",
+};
+
+Badge.propTypes = {
+  color: PropTypes.oneOf([
+    "primary",
+    "warning",
+    "danger",
+    "success",
+    "info",
+    "rose",
+    "gray",
+  ]),
+  className: PropTypes.string,
 };
