@@ -61,7 +61,7 @@ export default function PresentationPage() {
                     className={classes.proBadge}
                     style={{ marginRight: "15px" }}
                   >
-                    اليدويه
+                    تسوق الان
                   </span>
                 </h1>
                 <h3 className={classes.title}>توك - اطواق - بروشات</h3>

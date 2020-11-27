@@ -25,7 +25,6 @@ const useStyles = makeStyles(styles);
 
 export default function SectionLatestOffers() {
   const classes = useStyles();
-  // fetch("https://127.0.0.1:8000/")
   return (
     <div className={classes.section}>
       <div className={classes.container}>
@@ -76,7 +75,6 @@ export default function SectionLatestOffers() {
               </CardFooter>
             </Card>
           </GridItem>
-
           <GridItem md={4} sm={4}>
             <Card product plain>
               <CardHeader image plain>

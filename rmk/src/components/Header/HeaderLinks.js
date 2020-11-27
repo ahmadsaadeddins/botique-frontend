@@ -105,7 +105,8 @@ export default function HeaderLinks(props) {
           buttonIcon={Apps}
           dropdownList={[
             <Link to="/" className={classes.dropdownLink}>
-              <LineStyle className={classes.dropdownIcons} /> Presentation Page
+              <LineStyle className={classes.dropdownIcons} />
+              Presentation Page
             </Link>,
             <Link to="/components" className={classes.dropdownLink}>
               <Layers className={classes.dropdownIcons} />
@@ -122,10 +123,7 @@ export default function HeaderLinks(props) {
           ]}
         />
       </ListItem>
-      <Badge>primary</Badge>
-      <Button color="primary" round>
-        <PersonAdd /> With Icon
-      </Button>
+
       <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding

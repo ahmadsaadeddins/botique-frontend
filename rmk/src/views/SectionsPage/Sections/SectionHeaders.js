@@ -37,7 +37,7 @@ export default function SectionHeaders({ ...rest }) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false
+    autoplay: false,
   };
   return (
     // we've set the className to cd-section so we can make smooth scroll to it
@@ -56,7 +56,7 @@ export default function SectionHeaders({ ...rest }) {
                   <Button
                     href="#pablo"
                     className={classes.navLink}
-                    onClick={e => e.preventDefault()}
+                    onClick={(e) => e.preventDefault()}
                     color="transparent"
                   >
                     Home
@@ -66,7 +66,7 @@ export default function SectionHeaders({ ...rest }) {
                   <Button
                     href="#pablo"
                     className={classes.navLink}
-                    onClick={e => e.preventDefault()}
+                    onClick={(e) => e.preventDefault()}
                     color="transparent"
                   >
                     About us
@@ -76,7 +76,7 @@ export default function SectionHeaders({ ...rest }) {
                   <Button
                     href="#pablo"
                     className={classes.navLink}
-                    onClick={e => e.preventDefault()}
+                    onClick={(e) => e.preventDefault()}
                     color="transparent"
                   >
                     Products
@@ -86,7 +86,7 @@ export default function SectionHeaders({ ...rest }) {
                   <Button
                     href="#pablo"
                     className={classes.navLink}
-                    onClick={e => e.preventDefault()}
+                    onClick={(e) => e.preventDefault()}
                     color="transparent"
                   >
                     Contact us
@@ -183,7 +183,7 @@ export default function SectionHeaders({ ...rest }) {
                   <Button
                     href="#pablo"
                     className={classes.navLink}
-                    onClick={e => e.preventDefault()}
+                    onClick={(e) => e.preventDefault()}
                     color="transparent"
                   >
                     Home
@@ -193,7 +193,7 @@ export default function SectionHeaders({ ...rest }) {
                   <Button
                     href="#pablo"
                     className={classes.navLink}
-                    onClick={e => e.preventDefault()}
+                    onClick={(e) => e.preventDefault()}
                     color="transparent"
                   >
                     About us
@@ -203,7 +203,7 @@ export default function SectionHeaders({ ...rest }) {
                   <Button
                     href="#pablo"
                     className={classes.navLink}
-                    onClick={e => e.preventDefault()}
+                    onClick={(e) => e.preventDefault()}
                     color="transparent"
                   >
                     Products
@@ -213,7 +213,7 @@ export default function SectionHeaders({ ...rest }) {
                   <Button
                     href="#pablo"
                     className={classes.navLink}
-                    onClick={e => e.preventDefault()}
+                    onClick={(e) => e.preventDefault()}
                     color="transparent"
                   >
                     Contact us
@@ -295,11 +295,11 @@ export default function SectionHeaders({ ...rest }) {
                           <CustomInput
                             id="name"
                             inputProps={{
-                              placeholder: "Company name"
+                              placeholder: "Company name",
                             }}
                             formControlProps={{
                               fullWidth: true,
-                              className: classes.formControl
+                              className: classes.formControl,
                             }}
                           />
                         </GridItem>
@@ -307,11 +307,11 @@ export default function SectionHeaders({ ...rest }) {
                           <CustomInput
                             id="email"
                             inputProps={{
-                              placeholder: "Company email"
+                              placeholder: "Company email",
                             }}
                             formControlProps={{
                               fullWidth: true,
-                              className: classes.formControl
+                              className: classes.formControl,
                             }}
                           />
                         </GridItem>
@@ -321,11 +321,11 @@ export default function SectionHeaders({ ...rest }) {
                             inputProps={{
                               placeholder: "Company password",
                               type: "password",
-                              autoComplete: "off"
+                              autoComplete: "off",
                             }}
                             formControlProps={{
                               fullWidth: true,
-                              className: classes.formControl
+                              className: classes.formControl,
                             }}
                           />
                         </GridItem>
@@ -360,7 +360,7 @@ export default function SectionHeaders({ ...rest }) {
                 <Button
                   href="#pablo"
                   className={classes.navLink}
-                  onClick={e => e.preventDefault()}
+                  onClick={(e) => e.preventDefault()}
                   color="transparent"
                 >
                   Home
@@ -370,7 +370,7 @@ export default function SectionHeaders({ ...rest }) {
                 <Button
                   href="#pablo"
                   className={classes.navLink}
-                  onClick={e => e.preventDefault()}
+                  onClick={(e) => e.preventDefault()}
                   color="transparent"
                 >
                   About us
@@ -380,7 +380,7 @@ export default function SectionHeaders({ ...rest }) {
                 <Button
                   href="#pablo"
                   className={classes.navLink}
-                  onClick={e => e.preventDefault()}
+                  onClick={(e) => e.preventDefault()}
                   color="transparent"
                 >
                   Products
@@ -390,7 +390,7 @@ export default function SectionHeaders({ ...rest }) {
                 <Button
                   href="#pablo"
                   className={classes.navLink}
-                  onClick={e => e.preventDefault()}
+                  onClick={(e) => e.preventDefault()}
                   color="transparent"
                 >
                   Contact us

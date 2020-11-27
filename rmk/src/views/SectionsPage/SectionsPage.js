@@ -62,7 +62,7 @@ export default function SectionsPage() {
     t--;
     return (-c / 2) * (t * (t - 2) - 1) + b;
   };
-  const smoothScroll = target => {
+  const smoothScroll = (target) => {
     var targetScroll = document.getElementById(target);
     scrollGo(document.documentElement, targetScroll.offsetTop, 1250);
   };
@@ -72,7 +72,7 @@ export default function SectionsPage() {
       currentTime = 0,
       increment = 20;
 
-    var animateScroll = function() {
+    var animateScroll = function () {
       currentTime += increment;
       var val = easeInOutQuad(currentTime, start, change, duration);
       element.scrollTop = val;
@@ -108,7 +108,7 @@ export default function SectionsPage() {
               href="#headers"
               data-number="1"
               className="is-selected"
-              onClick={e => {
+              onClick={(e) => {
                 var isMobile = navigator.userAgent.match(
                   /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
                 );
@@ -129,7 +129,7 @@ export default function SectionsPage() {
               href="#features"
               data-number="2"
               className=""
-              onClick={e => {
+              onClick={(e) => {
                 var isMobile = navigator.userAgent.match(
                   /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
                 );
@@ -150,7 +150,7 @@ export default function SectionsPage() {
               href="#blogs"
               data-number="3"
               className=""
-              onClick={e => {
+              onClick={(e) => {
                 var isMobile = navigator.userAgent.match(
                   /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
                 );
@@ -171,7 +171,7 @@ export default function SectionsPage() {
               href="#teams"
               data-number="4"
               className=""
-              onClick={e => {
+              onClick={(e) => {
                 var isMobile = navigator.userAgent.match(
                   /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
                 );
@@ -192,7 +192,7 @@ export default function SectionsPage() {
               href="#projects"
               data-number="5"
               className=""
-              onClick={e => {
+              onClick={(e) => {
                 var isMobile = navigator.userAgent.match(
                   /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
                 );
@@ -213,7 +213,7 @@ export default function SectionsPage() {
               href="#pricing"
               data-number="6"
               className=""
-              onClick={e => {
+              onClick={(e) => {
                 var isMobile = navigator.userAgent.match(
                   /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
                 );
@@ -234,7 +234,7 @@ export default function SectionsPage() {
               href="#testimonials"
               data-number="7"
               className=""
-              onClick={e => {
+              onClick={(e) => {
                 var isMobile = navigator.userAgent.match(
                   /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
                 );
@@ -255,7 +255,7 @@ export default function SectionsPage() {
               href="#contacts"
               data-number="8"
               className=""
-              onClick={e => {
+              onClick={(e) => {
                 var isMobile = navigator.userAgent.match(
                   /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
                 );
