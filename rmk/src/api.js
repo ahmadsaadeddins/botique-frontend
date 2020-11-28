@@ -20,6 +20,7 @@ export const api = {
   },
   items: {
     category: `${BASEURL}/bot/category/`,
+    ordering: (type) => `${BASEURL}/bot/order/?ordering=${type}`,
     categorysrch: (id) => `${BASEURL}/bot/items/${id}`,
     pricesrch: (range) => `${BASEURL}/bot/price/${range}`,
     srch: (id, range) => `${BASEURL}/bot/srch/${id}-${range}`,
