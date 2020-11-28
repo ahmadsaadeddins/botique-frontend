@@ -54,14 +54,14 @@ export default function SectionProducts() {
         start: priceRange,
         connect: true,
         range: { min: 30, max: 900 },
-        step: 1
-      }).on("update", function(values) {
+        step: 1,
+      }).on("update", function (values) {
         setPriceRange([Math.round(values[0]), Math.round(values[1])]);
       });
     }
     return function cleanup() {};
   });
-  const handleToggle = value => {
+  const handleToggle = (value) => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
     if (currentIndex === -1) {
@@ -127,7 +127,7 @@ export default function SectionProducts() {
                           <br />
                           <div id="sliderRegular" className="slider-rose" />
                         </CardBody>
-                      )
+                      ),
                     },
                     {
                       title: "Clothing",
@@ -157,7 +157,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -178,7 +178,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -199,7 +199,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -220,7 +220,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -241,7 +241,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -262,7 +262,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -283,7 +283,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -304,7 +304,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -313,7 +313,7 @@ export default function SectionProducts() {
                             />
                           </div>
                         </div>
-                      )
+                      ),
                     },
                     {
                       title: "Designer",
@@ -343,7 +343,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -364,7 +364,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -385,7 +385,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -406,7 +406,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -427,7 +427,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -448,7 +448,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -469,7 +469,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -490,7 +490,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -511,7 +511,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -532,7 +532,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -553,7 +553,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -574,7 +574,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -595,7 +595,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -616,7 +616,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -637,7 +637,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -658,7 +658,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -679,7 +679,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -700,7 +700,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -709,7 +709,7 @@ export default function SectionProducts() {
                             />
                           </div>
                         </div>
-                      )
+                      ),
                     },
                     {
                       title: "Colour",
@@ -739,7 +739,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -760,7 +760,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -781,7 +781,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -802,7 +802,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -823,7 +823,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -844,7 +844,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -865,7 +865,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -886,7 +886,7 @@ export default function SectionProducts() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -895,8 +895,8 @@ export default function SectionProducts() {
                             />
                           </div>
                         </div>
-                      )
-                    }
+                      ),
+                    },
                   ]}
                 />
               </CardBody>
