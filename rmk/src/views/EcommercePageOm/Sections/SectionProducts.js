@@ -37,10 +37,10 @@ export default function SectionProducts() {
   const dataCategoryIds = dataCategory && dataCategory.map((item) => item.id);
   const [checked, setChecked] = React.useState(dataCategoryIds);
   const [priceRange, setPriceRange] = React.useState([1, 20]);
-  const { data } = useFetch(api.items.items);
-  const { data: srchData } = useFetch(api.items.categorysrch(checked));
+  // const { data } = useFetch(api.items.items);
+  // const { data: srchData } = useFetch(api.items.categorysrch(checked));
   const { data: srchD } = useFetch(api.items.srch(checked, priceRange));
-  const { data: PriceData } = useFetch(api.items.pricesrch(priceRange));
+  // const { data: PriceData } = useFetch(api.items.pricesrch(priceRange));
   console.log(srchD);
   React.useEffect(() => {
     if (
@@ -53,21 +53,22 @@ export default function SectionProducts() {
         connect: true,
         range: { min: 1, max: 150 },
         step: 1,
+        direction: "rtl",
       }).on("update", function (values) {
         setPriceRange([Math.round(values[0]), Math.round(values[1])]);
       });
     }
     return function cleanup() {};
-  }, []);
+  });
   const handleToggle = (value) => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
     if (currentIndex === -1) {
       newChecked.push(value);
-      console.log("after newChecked: ", checked);
+      // console.log("after newChecked: ", checked);
     } else {
       newChecked.splice(currentIndex, 1);
-      console.log("after splice: ", checked);
+      // console.log("after splice: ", checked);
     }
     setChecked(newChecked);
   };
@@ -89,7 +90,12 @@ export default function SectionProducts() {
                     classes={{ tooltip: classes.tooltip }}
                   >
                     <Button
-                      onClick={() => setChecked([])}
+                      onClick={() => {
+                        setChecked([]);
+                        document
+                          .getElementById("sliderRegular")
+                          .noUiSlider.set([1, 20]);
+                      }}
                       link
                       justIcon
                       size="sm"
@@ -191,9 +197,9 @@ export default function SectionProducts() {
 
           <GridItem md={9} sm={9}>
             <GridContainer>
-              {PriceData && !checked
-                ? PriceData.map((item, idx) =>
-                    idx < 10 || !srchData ? (
+              {srchD
+                ? srchD.map((item, idx) =>
+                    idx < 6 ? (
                       <GridItem md={4} sm={4} key={item.id}>
                         <Card plain product>
                           <CardHeader noShadow image>
@@ -218,7 +224,7 @@ export default function SectionProducts() {
                             <div className={classes.priceContainer}>
                               <span className={classes.price}>
                                 {" "}
-                                {convertToArabic(item.price * 3)} {"جنيه"}
+                                {convertToArabic(item.price)} {"جنيه"}
                               </span>
                             </div>
                             <Tooltip
@@ -241,56 +247,7 @@ export default function SectionProducts() {
                       </GridItem>
                     ) : null
                   )
-                : srchData &&
-                  srchData.map((item, idxx) =>
-                    idxx < 8 ? (
-                      <GridItem md={4} sm={4} key={item.id}>
-                        <Card plain product>
-                          <CardHeader noShadow image>
-                            <a href="#pablo">
-                              <img src={item.image} alt={item.description} />
-                            </a>
-                          </CardHeader>
-                          <CardBody plain>
-                            <a href="#pablo">
-                              <h4 className={classes.cardTitle}>
-                                رقم القطعه : {convertToArabic(item.id)}
-                              </h4>
-                            </a>
-                            <p className={classes.description}>
-                              {item.description}
-                            </p>
-                          </CardBody>
-                          <CardFooter
-                            plain
-                            className={classes.justifyContentBetween}
-                          >
-                            <div className={classes.priceContainer}>
-                              <span className={classes.price}>
-                                {" "}
-                                {convertToArabic(item.price * 3)} {"جنيه"}
-                              </span>
-                            </div>
-                            <Tooltip
-                              id="tooltip-top"
-                              title="Saved to Wishlist"
-                              placement="left"
-                              classes={{ tooltip: classes.tooltip }}
-                            >
-                              <Button
-                                justIcon
-                                simple
-                                color="rose"
-                                className={classes.pullRight}
-                              >
-                                <Favorite />
-                              </Button>
-                            </Tooltip>
-                          </CardFooter>
-                        </Card>
-                      </GridItem>
-                    ) : null
-                  )}
+                : null}
             </GridContainer>
           </GridItem>
         </GridContainer>
