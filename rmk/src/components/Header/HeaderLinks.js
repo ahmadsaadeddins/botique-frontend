@@ -44,11 +44,23 @@ import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 import Button from "components/CustomButtons/Button.js";
 import Badge from "components/Badge/Badge.js";
 
+// Helpers components
+import { convertToArabic } from "helpers";
+
 import styles from "assets/jss/material-kit-pro-react/components/headerLinksStyle.js";
 
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
+  const [memoizeOrders, setMemoizeOrder] = React.useState(localStorage.length);
+
+  React.useEffect(() => {
+    const getLocalStorageLength = setInterval(
+      () => setMemoizeOrder(localStorage.length),
+      1
+    );
+    return () => clearInterval(getLocalStorageLength, 1);
+  }, [memoizeOrders]);
   const easeInOutQuad = (t, b, c, d) => {
     t /= d / 2;
     if (t < 1) return (c / 2) * t * t + b;
@@ -252,12 +264,15 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <Button
           href="https://www.ahm4d.com/mozn/"
-          color={window.innerWidth < 960 ? "facebook" : "success"}
+          color={window.innerWidth < 960 ? "info" : "transparent"}
           target="_blank"
           className={classes.navButton}
           round
         >
-          <ShoppingCart className={classes.icons} /> اشترى الان
+          <ShoppingCart className={classes.icons} /> احجز الان{"  "}
+          {memoizeOrders ? (
+            <Badge>{convertToArabic(memoizeOrders)}</Badge>
+          ) : null}
         </Button>
       </ListItem>
     </List>
@@ -281,18 +296,5 @@ HeaderLinks.propTypes = {
 };
 
 Badge.defaultProps = {
-  color: "danger",
-};
-
-Badge.propTypes = {
-  color: PropTypes.oneOf([
-    "primary",
-    "warning",
-    "danger",
-    "success",
-    "info",
-    "rose",
-    "gray",
-  ]),
-  className: PropTypes.string,
+  color: "warning",
 };
