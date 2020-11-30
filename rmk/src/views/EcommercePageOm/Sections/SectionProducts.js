@@ -10,6 +10,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 // @material-ui icons
 import Favorite from "@material-ui/icons/Favorite";
+import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import Cached from "@material-ui/icons/Cached";
 import Check from "@material-ui/icons/Check";
 // core components
@@ -26,12 +27,14 @@ import Clearfix from "components/Clearfix/Clearfix.js";
 import { useFetch } from "helpers";
 import { api } from "api";
 import { convertToArabic } from "helpers";
+import { allStorage } from "helpers";
 
 import styles from "assets/jss/material-kit-pro-react/views/ecommerceSections/productsStyle.js";
 
 const useStyles = makeStyles(styles);
 
 export default function SectionProducts() {
+  const [colorOfItem, setColorOfItem] = React.useState(allStorage());
   const { data: dataCategory } = useFetch(api.items.category);
 
   const dataCategoryIds = dataCategory && dataCategory.map((item) => item.id);
@@ -42,6 +45,15 @@ export default function SectionProducts() {
   const { data: srchD } = useFetch(api.items.srch(checked, priceRange));
   // const { data: PriceData } = useFetch(api.items.pricesrch(priceRange));
   console.log(srchD);
+  const changeColorOnClick = (id) => {
+    if (localStorage.getItem(id)) {
+      localStorage.removeItem(id);
+      setColorOfItem(allStorage());
+    } else if (!localStorage.getItem(id)) {
+      localStorage.setItem(id, id);
+      setColorOfItem(allStorage());
+    }
+  };
   React.useEffect(() => {
     if (
       !document
@@ -200,10 +212,15 @@ export default function SectionProducts() {
               {srchD
                 ? srchD.map((item, idx) =>
                     idx < 6 ? (
-                      <GridItem md={4} sm={4} key={item.id}>
+                      <GridItem
+                        md={4}
+                        sm={4}
+                        key={item.id}
+                        onClick={() => changeColorOnClick(item.id)}
+                      >
                         <Card plain product>
                           <CardHeader noShadow image>
-                            <a href="#pablo">
+                            <a>
                               <img src={item.image} alt={item.description} />
                             </a>
                           </CardHeader>
@@ -234,12 +251,17 @@ export default function SectionProducts() {
                               classes={{ tooltip: classes.tooltip }}
                             >
                               <Button
-                                justIcon
-                                simple
+                                onClick={() => changeColorOnClick(item.id)}
                                 color="rose"
+                                simple
                                 className={classes.pullRight}
                               >
-                                <Favorite />
+                                {localStorage.getItem(item.id) ===
+                                colorOfItem[item.id] ? (
+                                  <Favorite />
+                                ) : (
+                                  <FavoriteBorderOutlinedIcon />
+                                )}
                               </Button>
                             </Tooltip>
                           </CardFooter>
