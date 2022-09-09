@@ -28,6 +28,7 @@ import BlogPostsPage from "views/BlogPostsPage/BlogPostsPage.js";
 import ComponentsPage from "views/ComponentsPage/ComponentsPage.js";
 import ContactUsPage from "views/ContactUsPage/ContactUsPage.js";
 import EcommercePage from "views/EcommercePage/EcommercePage.js";
+import EcommercePageEHT from "views/EcommercePageEHT/EcommercePage.js";
 import EcommercePageOm from "views/EcommercePageOm/EcommercePage.js";
 import LandingPage from "views/LandingPage/LandingPage.js";
 import LoginPage from "views/LoginPage/LoginPage.js";

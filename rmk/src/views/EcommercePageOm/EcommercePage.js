@@ -32,6 +32,7 @@ import face7 from "assets/img/faces/card-profile5-square.jpg";
 import face8 from "assets/img/faces/card-profile2-square.jpg";
 
 import styles from "assets/jss/material-kit-pro-react/views/ecommerceStyle.js";
+import SectionHeader from "views/SectionsPage/Sections/SectionHeader";
 // instead of importing the container from material-ui
 
 // you would import our component like this
@@ -46,6 +47,8 @@ export default function EcommercePage() {
   return (
     <RTL>
       <ThemeProvider theme={theme}>
+        <SectionHeader id="headers" />
+
         <Header
           className={classes.dir}
           brand="أم شهاب للمصنوعات اليدوية"
@@ -58,8 +61,8 @@ export default function EcommercePage() {
           }}
         />
 
-        <Parallax
-          image={require("assets/img/examples/bg2.jpg")}
+        {/* <Parallax
+          image={require("assets/img/examples/R.jpg")}
           filter="dark"
           large
         >
@@ -84,7 +87,7 @@ export default function EcommercePage() {
               </GridItem>
             </GridContainer>
           </div>
-        </Parallax>
+        </Parallax> */}
 
         <div className={classNames(classes.main, classes.mainRaised)}>
           <SectionLatestOffers />
