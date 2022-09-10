@@ -63,7 +63,7 @@ export default function SectionProducts() {
       Slider.create(document.getElementById("sliderRegular"), {
         start: priceRange,
         connect: true,
-        range: { min: 1, max: 150 },
+        range: { min: 1, max: 10000 },
         step: 1,
         direction: "rtl",
       }).on("update", function (values) {
